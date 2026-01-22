@@ -13,7 +13,7 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-midnight flex flex-col">
         <Navbar />
-        <div className="flex-1">
+        <div className="flex-1 pb-32">
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
