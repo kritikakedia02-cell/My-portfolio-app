@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,67 +10,10 @@
   }
 
   body {
-    @apply bg-midnight text-slate-light font-sans antialiased;
+    @apply bg-charcoal text-white font-sans antialiased;
   }
 
   ::selection {
-    @apply bg-violet/30 text-white;
-  }
-}
-
-@layer components {
-  .btn-primary {
-    @apply px-6 py-3 bg-violet text-white font-semibold rounded-2xl
-           hover:bg-violet-light transition-all duration-300
-           hover:shadow-glow-violet active:scale-95;
-  }
-
-  .btn-secondary {
-    @apply px-6 py-3 bg-transparent border-2 border-violet text-violet
-           font-semibold rounded-2xl hover:bg-violet hover:text-white
-           transition-all duration-300;
-  }
-
-  .btn-teal {
-    @apply px-6 py-3 bg-teal text-midnight font-semibold rounded-2xl
-           hover:bg-teal-light transition-all duration-300
-           hover:shadow-glow-teal active:scale-95;
-  }
-
-  .card {
-    @apply bg-slate-surface rounded-2xl p-6 border border-slate-border/30
-           shadow-card transition-all duration-300;
-  }
-
-  .card-hover {
-    @apply hover:shadow-card-hover hover:scale-[1.02] hover:border-violet/50;
-  }
-
-  .section-heading {
-    @apply text-3xl md:text-4xl font-display font-bold text-white mb-4 tracking-tight;
-  }
-
-  .section-subheading {
-    @apply text-lg text-slate-text max-w-2xl leading-relaxed;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-violet to-teal bg-clip-text text-transparent;
-  }
-
-  .badge {
-    @apply inline-flex items-center gap-2 px-4 py-2 bg-slate-surface/50
-           rounded-full text-sm text-slate-text border border-slate-border/30;
-  }
-
-  .badge-violet {
-    @apply inline-flex items-center gap-2 px-4 py-2 bg-violet/10
-           rounded-full text-sm text-violet font-medium;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    @apply bg-orange text-white;
   }
 }

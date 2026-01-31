@@ -1,134 +1,108 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Cpu } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
+import ProfileCard from '../components/ProfileCard';
+import projects from '../data/projects';
 
-const projects = [
-  {
-    id: 1,
-    title: 'Mindbuddy',
-    tools: ['Lovable', 'Thunderbit', 'Excalidraw'],
-    useCase: 'Navigating Toxic Work Culture',
-    demoUrl: 'https://lovable.dev/projects/421923b0-903a-47e7-ab15-6b06a43ffe02',
-    gradient: 'from-violet to-violet-light',
-  },
-  {
-    id: 2,
-    title: 'Pocketwise',
-    tools: ['Lovable', 'Thunderbit', 'draw.io'],
-    useCase: "Killing India's Forgotten Subscription Auto-Renewals",
-    demoUrl: 'https://preview--group-5-pocket-wise.lovable.app/',
-    gradient: 'from-teal to-teal-light',
-  },
-  {
-    id: 3,
-    title: 'BLR-ORR Action Console',
-    tools: ['Figma Make', 'draw.io', 'Excalidraw'],
-    useCase: 'A better tool for India traffic Management',
-    demoUrl: 'https://nacre-skirr-89810319.figma.site/',
-    gradient: 'from-violet-dark to-violet',
-  },
-  {
-    id: 4,
-    title: 'Lune',
-    tools: ['Lovable', 'draw.io', 'Excalidraw'],
-    useCase: 'Cycle-Aware Productivity & Wellbeing Companion for Young Women',
-    demoUrl: 'https://preview--lune-goroup-5.lovable.app/',
-    gradient: 'from-teal-dark to-teal',
-  },
-];
+function ProjectCard({ project, index }) {
+  const hasCaseStudy = project.sections.length > 0;
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-};
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="bg-card-dark rounded-card overflow-hidden"
+    >
+      <div className="p-5 md:p-8">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+          {/* Left — text */}
+          <div className="flex-1 flex flex-col justify-between min-h-[200px]">
+            <div>
+              <h3 className="text-[22px] md:text-subtitle font-display font-bold text-white leading-tight">
+                {project.cardTitle}
+              </h3>
+              <p className="text-muted text-body-sm mt-3 leading-relaxed">
+                {project.cardDesc}
+              </p>
+            </div>
+          </div>
+
+          {/* Right — product icon */}
+          <div className="w-full md:w-[280px] lg:w-[320px] flex-shrink-0">
+            <div className="rounded-card overflow-hidden bg-card-lighter">
+              <img
+                src={project.icon}
+                alt={project.title}
+                className="w-full h-auto block"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Stats row */}
+        {project.cardStats && (
+          <div className="flex gap-10 md:gap-16 mt-8">
+            {project.cardStats.map((stat, i) => (
+              <div key={i}>
+                <p className="text-muted text-[13px] mb-1">{stat.label}</p>
+                <span className="text-[36px] md:text-[44px] font-display font-black text-white leading-none">
+                  {stat.value}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Links */}
+        <div className="flex gap-5 mt-6">
+          {hasCaseStudy && (
+            <Link
+              to={`/projects/${project.slug}`}
+              className="inline-flex items-center gap-1 text-body-sm text-orange hover:text-white transition-colors"
+            >
+              Read case study <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          )}
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-body-sm text-orange hover:text-white transition-colors"
+          >
+            Try now <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Projects() {
   return (
-    <main className="min-h-screen pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet/10 rounded-full mb-6">
-            <Cpu className="w-4 h-4 text-violet" />
-            <span className="text-sm text-violet font-medium">The AI Lab</span>
-          </div>
-          <h1 className="section-heading text-center">
-            Recent <span className="gradient-text">Builds</span>
-          </h1>
-          <p className="section-subheading mx-auto text-center">
-            A collection of AI-powered projects and experiments. Each build explores
-            a unique use case at the intersection of AI and practical applications.
-          </p>
-        </motion.div>
-
-        {/* Projects Grid - Bento Box Style */}
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={{
-            animate: { transition: { staggerChildren: 0.1 } },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              variants={fadeInUp}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group card card-hover"
-            >
-              {/* Gradient accent bar */}
-              <div
-                className={`h-1 w-full bg-gradient-to-r ${project.gradient} rounded-full mb-6
-                          group-hover:h-2 transition-all duration-300`}
-              />
-
-              {/* Project Title */}
-              <h3 className="text-xl font-display font-semibold text-white mb-3">
-                {project.title}
-              </h3>
-
-              {/* Tools Used */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="px-3 py-1 bg-midnight/50 rounded-full text-xs text-slate-text
-                             border border-slate-border/30"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-
-              {/* Use Case */}
-              <p className="text-slate-text text-sm leading-relaxed mb-6">
-                <span className="text-violet font-medium">The Use Case: </span>
-                {project.useCase}
-              </p>
-
-              {/* Links */}
-              <div className="flex gap-3 mt-auto">
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-violet/10
-                           text-violet text-sm font-medium rounded-xl
-                           hover:bg-violet hover:text-white transition-all duration-300"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  View Project
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+    <div className="pb-20">
+      {/* Mobile-only profile card */}
+      <div className="lg:hidden mb-10 max-w-sm mx-auto">
+        <ProfileCard />
       </div>
-    </main>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-section-sm sm:text-section-md lg:text-section font-display font-black uppercase mb-12">
+          <span className="text-white">Recent</span>
+          <br />
+          <span className="text-muted">Projects</span>
+        </h1>
+      </motion.div>
+
+      <div className="space-y-4">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
+        ))}
+      </div>
+    </div>
   );
 }
