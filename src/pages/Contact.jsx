@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CalendarDays, Github, Send, FileText } from 'lucide-react';
+import { CalendarDays, Github, Linkedin, Send, FileText } from 'lucide-react';
 import ProfileCard from '../components/ProfileCard';
-import LinkedInIcon from '../components/LinkedInIcon';
 import { supabase } from '../lib/supabase';
 
 const contactLinks = [
-  { icon: LinkedInIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/kritika-kedia-pm/' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/kritika-kedia-pm/' },
   { icon: FileText, label: 'Get Resume', href: '/resume.pdf' },
   { icon: Github, label: 'GitHub', href: 'https://github.com/kritikakedia02-cell' },
   { icon: CalendarDays, label: 'Schedule a Call', href: 'https://calendly.com/kritikakedia02/30min' },

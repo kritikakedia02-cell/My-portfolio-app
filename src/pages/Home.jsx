@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, Layers, Layout } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Layers, Layout, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProfileCard from '../components/ProfileCard';
 
@@ -61,6 +61,27 @@ const experience = [
     designation: 'Consultant',
     description: 'A platform for Talent & Corporate Training Solutions',
     duration: 'May 2018 - August 2019',
+  },
+];
+
+const posts = [
+  {
+    id: 1,
+    date: 'Jan 15, 2026',
+    title: "We're tracking the wrong things in 2026.",
+    url: 'https://www.linkedin.com/posts/kritika-kedia-pm_productmanagement-aistrategy-b2btech-activity-7417513909491789825-J_y0',
+  },
+  {
+    id: 2,
+    date: 'Jan 14, 2026',
+    title: 'How to Build for 2026: The 3 Ways AI "Teams" are Replacing Single Bots',
+    url: 'https://www.linkedin.com/posts/kritika-kedia-pm_productmanagement-aiworkforce-b2btech-activity-7417136624565776384-iexL',
+  },
+  {
+    id: 3,
+    date: 'Jan 13, 2026',
+    title: 'Why B2B AI in 2026 is moving from "Assistance" to "Autonomy"',
+    url: 'https://www.linkedin.com/posts/kritika-kedia-pm_aiproductmanagement-b2b2026-agenticai-activity-7416787873967996929-GNFb',
   },
 ];
 
@@ -204,6 +225,39 @@ export default function Home() {
                 {job.description}
               </p>
             </div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* ──── BLOG & POSTS ──── */}
+      <motion.section className="mt-section" {...fadeIn}>
+        <h2 className="text-section-sm sm:text-section-md lg:text-section font-display font-black text-white uppercase mb-12">
+          Blog &amp;
+          <br />
+          Posts
+        </h2>
+        <div className="space-y-[10px]">
+          {posts.map((post) => (
+            <a
+              key={post.id}
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-5 bg-card-dark rounded-card p-6 hover:bg-card-lighter transition-colors duration-200"
+            >
+              <div className="w-12 h-12 bg-card-lighter rounded-card flex items-center justify-center flex-shrink-0">
+                <Linkedin className="w-6 h-6" />
+              </div>
+              <div className="flex-1">
+                <span className="text-muted/60 text-body-sm">{post.date}</span>
+                <h3 className="text-body font-display font-bold text-white group-hover:text-orange transition-colors mt-1 leading-snug">
+                  {post.title}
+                </h3>
+                <span className="inline-flex items-center gap-1 text-body-sm text-orange group-hover:text-white transition-colors mt-3">
+                  Read on LinkedIn <ArrowUpRight className="w-4 h-4" />
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       </motion.section>

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
-import LinkedInIcon from '../components/LinkedInIcon';
+import { ArrowUpRight, Linkedin } from 'lucide-react';
 import ProfileCard from '../components/ProfileCard';
 
 const posts = [
@@ -64,7 +63,7 @@ export default function Blog() {
             className="group flex items-start gap-5 bg-card-dark rounded-card p-6 hover:bg-card-lighter transition-colors duration-200"
           >
             <div className="w-12 h-12 bg-card-lighter rounded-card flex items-center justify-center flex-shrink-0">
-              <LinkedInIcon className="w-6 h-6" />
+              <Linkedin className="w-6 h-6" />
             </div>
             <div className="flex-1">
               <span className="text-muted/60 text-body-sm">{post.date}</span>
@@ -91,7 +90,7 @@ export default function Blog() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-card-dark text-white font-display font-bold rounded-card hover:bg-card-lighter transition-colors"
         >
-          <LinkedInIcon className="w-5 h-5" />
+          <Linkedin className="w-5 h-5" />
           View All Posts
           <ArrowUpRight className="w-4 h-4" />
         </a>

@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Github, Mail } from 'lucide-react';
-import LinkedInIcon from './LinkedInIcon';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const socialLinks = [
-  { icon: LinkedInIcon, href: 'https://www.linkedin.com/in/kritika-kedia-pm/', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/kritika-kedia-pm/', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/kritikakedia02-cell', label: 'GitHub' },
   { icon: Mail, href: '/contact', label: 'Contact', internal: true },
 ];

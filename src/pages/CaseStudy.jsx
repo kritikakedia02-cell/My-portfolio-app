@@ -89,12 +89,29 @@ export default function CaseStudy() {
         <div className="space-y-6">
           {project.sections.map((section, i) => (
             <div key={i}>
-              <h4 className="text-body font-display font-bold text-white mb-2">
-                {section.heading}
-              </h4>
-              <p className="text-muted text-body-sm leading-relaxed">
-                {section.body}
-              </p>
+              {section.heading && (
+                <h4 className="text-body font-display font-bold text-white mb-2">
+                  {section.heading}
+                </h4>
+              )}
+              {section.body && (
+                <p className="text-muted text-body-sm leading-relaxed">
+                  {section.body}
+                </p>
+              )}
+              {section.images && section.images.length > 0 && (
+                <div className={`mt-6 gap-5 ${section.images.length === 1 ? 'flex justify-center' : 'grid grid-cols-2'}`}>
+                  {section.images.map((img, j) => (
+                    <div key={j} className="rounded-2xl overflow-hidden shadow-xl">
+                      <img
+                        src={img}
+                        alt={`${section.heading || project.title} screenshot ${j + 1}`}
+                        className="w-full h-auto block rounded-2xl"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
