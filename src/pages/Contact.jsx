@@ -22,6 +22,12 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    if (!supabase) {
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      return;
+    }
+
     const { error } = await supabase
       .from('contact_messages')
       .insert({ name: formData.name, email: formData.email, message: formData.message });

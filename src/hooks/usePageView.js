@@ -6,6 +6,7 @@ export default function usePageView() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    if (!supabase) return;
     supabase.from('page_views').insert({
       page: pathname,
       referrer: document.referrer || null,
