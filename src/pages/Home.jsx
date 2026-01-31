@@ -117,7 +117,7 @@ export default function Home() {
         <ul className="text-muted text-body-sm md:text-body leading-[1.4] mb-4 max-w-2xl space-y-2 list-none">
           <li>7+ years of experience building B2B, B2B2C, SaaS Products, and AI-Powered solutions across healthcare, EdTech and Events &amp; Venue operation domain.</li>
           <li>Proven track record of 0&#8209;1 product launches and platform scaling, API integrations &amp; analytics that improve adoption, reduce operational costs, and uplift revenue streams.</li>
-          <li>Strong at product discovery, roadmap ownership, and data-driven decision making and cross-functional execution in fast-paced, ambiguous environments.</li>
+          <li>Strong at product discovery, roadmap ownership, data-driven decision making and cross-functional execution in fast-paced, ambiguous environments.</li>
         </ul>
 
         <div className="flex gap-5 mb-12">

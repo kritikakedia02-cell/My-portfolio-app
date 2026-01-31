@@ -1,9 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, BarChart3, FolderOpen, PenLine, Mail, Linkedin } from 'lucide-react';
+import { Home, Briefcase, FolderOpen, PenLine, Mail, Linkedin } from 'lucide-react';
 
 const navLinks = [
   { icon: Home, path: '/', label: 'Home' },
-  { icon: BarChart3, path: '/work', label: 'Experience' },
+  { icon: Briefcase, path: '/work', label: 'Experience' },
   { icon: FolderOpen, path: '/projects', label: 'Projects' },
   { icon: PenLine, path: '/blog', label: 'Blog' },
   { icon: Mail, path: '/contact', label: 'Contact' },
