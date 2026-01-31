@@ -58,19 +58,6 @@ export default function CaseStudy() {
           </p>
         )}
 
-        {/* Meta tags */}
-        {project.meta && (
-          <div className="flex flex-wrap gap-2 mb-8">
-            {Object.entries(project.meta).map(([key, value]) => (
-              <span
-                key={key}
-                className="text-[12px] px-3 py-1 rounded-full bg-card-lighter text-muted"
-              >
-                {value}
-              </span>
-            ))}
-          </div>
-        )}
 
         {/* Overview */}
         {project.overview && (

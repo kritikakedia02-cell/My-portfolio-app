@@ -34,7 +34,7 @@ function ProjectCard({ project, index }) {
               <img
                 src={project.icon}
                 alt={project.title}
-                className="w-full h-auto block"
+                className="w-full h-auto block max-h-[200px] object-contain"
               />
             </div>
           </div>
