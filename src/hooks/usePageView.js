@@ -10,6 +10,6 @@ export default function usePageView() {
       page: pathname,
       referrer: document.referrer || null,
       user_agent: navigator.userAgent,
-    });
+    }).then(() => {});
   }, [pathname]);
 }
