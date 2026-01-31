@@ -59,27 +59,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-card-lighter" />
-
-        {/* Bottom row — copyright (left) + nav links (right) */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-muted/60 text-[13px]">
-            &copy; 2025 Kritika Kedia. Thank you for taking time to read.
-          </p>
-
-          <div className="flex items-center gap-5">
-            <Link to="/" className="text-muted text-[13px] hover:text-white transition-colors">
-              Home
-            </Link>
-            <Link to="/projects" className="text-muted text-[13px] hover:text-white transition-colors">
-              Projects
-            </Link>
-            <Link to="/contact" className="text-muted text-[13px] hover:text-white transition-colors">
-              Contact
-            </Link>
-          </div>
-        </div>
       </div>
     </footer>
   );
