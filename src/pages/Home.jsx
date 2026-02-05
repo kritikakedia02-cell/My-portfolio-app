@@ -207,9 +207,7 @@ export default function Home() {
       {/* ──── EXPERIENCE ──── */}
       <motion.section className="mt-section" {...fadeIn}>
         <h2 className="text-section-sm sm:text-section-md lg:text-section font-display font-black text-white uppercase mb-16">
-          7 Years of
-          <br />
-          Experience
+          7+ Years of Experience
         </h2>
         <div className="space-y-[10px]">
           {experience.map((job, i) => (

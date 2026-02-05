@@ -30,11 +30,11 @@ function ProjectCard({ project, index }) {
 
           {/* Right — product icon */}
           <div className="w-full md:w-[280px] lg:w-[320px] flex-shrink-0">
-            <div className="rounded-card overflow-hidden bg-card-lighter">
+            <div className="rounded-card overflow-hidden">
               <img
                 src={project.icon}
                 alt={project.title}
-                className="w-full h-auto block max-h-[200px] object-contain"
+                className="w-full h-auto block object-cover"
               />
             </div>
           </div>
@@ -91,9 +91,8 @@ export default function Projects() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-section-sm sm:text-section-md lg:text-section font-display font-black uppercase mb-12">
-          <span className="text-white">Recent</span>
-          <br />
+        <h1 className="text-section-sm sm:text-section-md lg:text-section font-display font-black mb-12">
+          <span className="text-white">Recent </span>
           <span className="text-muted">Projects</span>
         </h1>
       </motion.div>

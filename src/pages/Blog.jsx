@@ -41,8 +41,9 @@ export default function Blog() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-section-sm sm:text-section-md lg:text-section font-display font-black text-white uppercase mb-12">
-          Blog &amp; Posts
+        <h1 className="text-section-sm sm:text-section-md lg:text-section font-display font-black mb-12">
+          <span className="text-white">Blog & </span>
+          <span className="text-muted">Posts</span>
         </h1>
       </motion.div>
 

@@ -50,8 +50,8 @@ export default function WorkHistory() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-section-sm sm:text-section-md lg:text-section font-display font-black uppercase mb-10">
-          <span className="text-white">7 Years of</span>
+        <h1 className="text-section-sm sm:text-section-md lg:text-section font-display font-black mb-10">
+          <span className="text-white">7+ Years of</span>
           <br />
           <span className="text-muted">Experience</span>
         </h1>

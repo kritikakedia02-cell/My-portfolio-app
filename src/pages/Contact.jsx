@@ -57,7 +57,7 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-section-sm sm:text-section-md lg:text-[90px] font-display font-black uppercase leading-none mb-8">
+        <h1 className="text-section-sm sm:text-section-md lg:text-[90px] font-display font-black leading-none mb-8">
           <span className="text-white">Let&rsquo;s Work</span>
           <br />
           <span className="text-muted">Together</span>
