@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CalendarDays, Github, Linkedin, Send, FileText } from 'lucide-react';
+import { CalendarDays, Github, Linkedin, Send, FileText, Mail, Phone } from 'lucide-react';
 import ProfileCard from '../components/ProfileCard';
 import { supabase } from '../lib/supabase';
 
 const contactLinks = [
+  { icon: Mail, label: 'Email Me', href: 'mailto:Kritikakedia02@gmail.com' },
+  { icon: Phone, label: 'Call Me', href: 'tel:+919717108671' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/kritika-kedia-pm/' },
   { icon: FileText, label: 'Get Resume', href: '/resume.pdf' },
   { icon: Github, label: 'GitHub', href: 'https://github.com/kritikakedia02-cell' },
